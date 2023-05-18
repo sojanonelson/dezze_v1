@@ -1,14 +1,41 @@
-.input{
-  height: 30px;
-  width: 500px;
-}
 
 .main{
-  background-color: rgb(43, 41, 41);
-  justify-content: center;
   display:flex;
-  gap: 10px;
-  color: white;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  justify-content: center;
   align-items: center;
 }
+
+.main input{
+
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 60%;
+  width:700px;
+  height:60px;
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 500px) {
+  .main input{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 30%;
+    margin-left: 10px;
+    width:400px;
+    height:60px;
+    border-radius: 25px;
+
+  }
+}
+
+@media only screen and (width: 1366px) {
+  .main input{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 30%;
+    margin-left: 10px;
+    width:700px;
+    height:60px;
+    border-radius: 25px;
+
+  }
+}
+
+
