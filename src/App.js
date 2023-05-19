@@ -61,6 +61,10 @@ const App = () => {
       <h1 className="text-xl text-white-500 font-serif">Video title: {title}</h1>
       <h1>{load === true && link === "" ? "Loading" : ""}</h1>
       
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2285024360288270"
+     crossorigin="anonymous"></script>
+      
     </div>
   </div>
   );
