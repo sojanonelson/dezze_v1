@@ -8,6 +8,7 @@
 .main input{
 
   font-family: 'Times New Roman', Times, serif;
+  font-size:30px;
   margin-top: 60%;
   width:700px;
   height:60px;
@@ -18,6 +19,7 @@
   .main input{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-top: 30%;
+    font-size:20px;
     margin-left: 10px;
     width:400px;
     height:60px;
