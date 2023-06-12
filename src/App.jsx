@@ -57,7 +57,7 @@ const App = () => {
   };
 
   return (
-  <div className="main bg-slate-700 ">
+  <div className="main bg-grey-100 ">
     
      <div className="flex flex-col items-center">
       <div className="input ">
@@ -68,12 +68,12 @@ const App = () => {
    <a href={link ? `${link}` : "#"}>
 
 
-        <button className="px-4 py-2 text-white bg-green-500 rounded-md" onClick={handleSubmit} >{link ? "Download" : "Submit" }</button>
+        <button className="px-4 py-2 text-white bg-red-700 rounded-md" onClick={handleSubmit} >{link ? "Download" : "Submit" }</button>
    </a>
         
       </div>
       
-      <h1 className="text-xl mt-10 text-lime-200 font-serif">Video title: {title}</h1>
+      <h1 className="text-xl mt-10 text-black-200 font-serif">Video title: {title}</h1>
       <h1>{load === true && link === "" ? "Loading" : ""}</h1>
 
       {adSenseLoaded && (
@@ -81,7 +81,7 @@ const App = () => {
     className="adsbygoogle"
     style={{ display: "block" }}
     data-ad-client="pub-2285024360288270"
-    data-ad-slot="f08c47fec0942fa0"
+    data-ad-slot=""
     data-ad-format="auto"
     data-full-width-responsive="true"
   />
