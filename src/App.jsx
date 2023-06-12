@@ -1,15 +1,15 @@
-import React, { useState , useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import getVideoId from "get-video-id";
 import "./App.css";
-
 const App = () => {
   const [videoid, setVideoid] = useState("");
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
   const [load,setLoad] = useState(false);
-  const [adSenseLoaded, setAdSenseLoaded] = useState(false);
-
+  const [thumbnailUrl,setThumnailurl] = useState("");
+  
+  
 
   const Rapidkey = "a597310939msh2d19f03988866e2p17b2eejsn5e135d6c5603";
   const Rapidhost = "youtube-mp36.p.rapidapi.com";
@@ -17,24 +17,13 @@ const App = () => {
     setVideoid(e.target.value);
   };
   
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src =
-      "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2285024360288270";
-    script.crossOrigin = "anonymous";
-    script.async = true;
-    script.onload = () => {
-      setAdSenseLoaded(true);
-    };
-  
-    document.body.appendChild(script);
-  }, []);
 
- 
+
   const handleSubmit = async (event) => {
     const { id } = getVideoId(`${videoid}`);
     console.log(id);
-
+    
+    setThumnailurl(`https://img.youtube.com/vi/${id}/maxresdefault.jpg`)
     const options = {
       method: "GET",
       url: "https://youtube-mp36.p.rapidapi.com/dl",
@@ -44,7 +33,9 @@ const App = () => {
         "X-RapidAPI-Key": `${Rapidkey}`,
         "X-RapidAPI-Host": `${Rapidhost}`,
       },
-    };
+    }
+    
+    ;
 
     try {
       setLoad(true)
@@ -57,11 +48,13 @@ const App = () => {
   };
 
   return (
+   
   <div className="main bg-grey-100 ">
     
      <div className="flex flex-col items-center">
+      
       <div className="input ">
-        <input className="px-4 py-2 w-full border-b-slate-950 rounded-md" onChange={handleChange}
+        <input className="px-4 py-2 w-full  rounded-md" onChange={handleChange}
           value={videoid} type="text" placeholder="Paste the video link here"/>
       </div>
       <div className="mt-4">
@@ -73,21 +66,17 @@ const App = () => {
         
       </div>
       
-      <h1 className="text-xl mt-10 text-black-200 font-serif">Video title: {title}</h1>
+      
+      
+      <h1 className="text-xl mt-5 text-black-200 font-serif">Video title: {title}</h1>
+      
+      <img className="thumbnail" src={thumbnailUrl} alt="" />
       <h1>{load === true && link === "" ? "Loading" : ""}</h1>
 
-      {adSenseLoaded && (
-  <ins
-    className="adsbygoogle"
-    style={{ display: "block" }}
-    data-ad-client="pub-2285024360288270"
-    data-ad-slot=""
-    data-ad-format="auto"
-    data-full-width-responsive="true"
-  />
-)}
     </div>
   </div>
+  
+  
   );
 };
 

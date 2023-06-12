@@ -10,7 +10,7 @@
   font-family: 'Times New Roman', Times, serif;
   font-size:30px;
   margin-top: 60%;
-  width:700px;
+  width:750px;
   height:60px;
   border-radius: 25px;
 }
@@ -68,7 +68,24 @@
 
 input{
   border: 3px solid rgb(90, 90, 90);
-  background-color: rgb(180, 174, 174);
+  background-color: rgb(114, 114, 114);
+  
+  
 }
 
+input:focus {
+  background-color: white;
+  box-shadow:inset 0 0 8px 2px #3e3e3e;
+  
+}
 
+input::placeholder {
+  font-weight: bold;
+  opacity: 0.6;
+  color: white;
+}
+
+.thumbnail{
+height: 200px;
+width: auto;
+}
