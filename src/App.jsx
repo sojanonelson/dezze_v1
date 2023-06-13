@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import getVideoId from "get-video-id";
 import "./App.css";
+import logo from "./image/logo.jpeg"
 const App = () => {
   const [videoid, setVideoid] = useState("");
   const [title, setTitle] = useState("");
@@ -62,9 +63,13 @@ const App = () => {
     
     
      <div className="flex flex-col items-center">
+      <div className="logon column">
+        <figure>
+      <img src={logo} className="" alt="" /></figure>
+      </div>
       
       <div className="input ">
-        <input required="number" type="url" className="px-4 py-2 w-full  rounded-md" onChange={handleChange}
+        <input required="number" type="url" className="px-4 py-2 w-full  rounded-md transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/30 rounded-xl" onChange={handleChange}
           value={videoid} placeholder="Paste the video link here"/>
       </div>
       <div className="mt-4">

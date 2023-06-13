@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
+import "./App.css"
 
 const Navbar = () => {
   return (
     <div>
-    <nav class="bg-red-500">
+    <nav class="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex-shrink-0">
-          <a href='https://google.com' class="text-white text-2xl font-bold">Dezze </a>
+          <a href='https://google.com' class="text-white text-2xl font-bold">Dezze Mp3 </a>
         </div>
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
