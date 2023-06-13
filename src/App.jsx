@@ -77,7 +77,7 @@ const App = () => {
         
       </div>
       
-      <button className="sojan">button</button>
+     
       
       <h1 className="videotitle text-xl mt-5 text-black-200 "><b>Video title:</b> {title}</h1>
       <div >
