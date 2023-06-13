@@ -8,6 +8,7 @@ const App = () => {
   const [link, setLink] = useState("");
   const [load,setLoad] = useState(false);
   const [thumbnailUrl,setThumnailurl] = useState("");
+  const [isstatetrue,setIsStateTrue] =useState(false);
   
   
 
@@ -17,6 +18,12 @@ const App = () => {
     setVideoid(e.target.value);
   };
   
+  const buttonStyles = {
+    backgroundColor: isstatetrue ? "green" : "red",
+
+
+    
+  };
 
 
   const handleSubmit = async (event) => {
@@ -34,7 +41,8 @@ const App = () => {
         "X-RapidAPI-Host": `${Rapidhost}`,
       },
     }
-    
+     
+    setIsStateTrue(true);
     ;
 
     try {
@@ -48,32 +56,37 @@ const App = () => {
   };
 
   return (
+  <div>
    
-  <div className="main bg-grey-100 ">
+  <div className="main  ">
+    
     
      <div className="flex flex-col items-center">
       
       <div className="input ">
-        <input className="px-4 py-2 w-full  rounded-md" onChange={handleChange}
-          value={videoid} type="text" placeholder="Paste the video link here"/>
+        <input required="number" type="url" className="px-4 py-2 w-full  rounded-md" onChange={handleChange}
+          value={videoid} placeholder="Paste the video link here"/>
       </div>
       <div className="mt-4">
    <a href={link ? `${link}` : "#"}>
 
 
-        <button className="px-4 py-2 text-white bg-red-700 rounded-md" onClick={handleSubmit} >{link ? "Download" : "Submit" }</button>
+        <button className="sojan px-4 py-2 text-white  rounded-md " style={buttonStyles}  onClick={handleSubmit} >{link ? "Download" : "Submit" }</button>
+        
    </a>
         
       </div>
       
+      <button className="sojan">button</button>
       
-      
-      <h1 className="text-xl mt-5 text-black-200 font-serif">Video title: {title}</h1>
-      
+      <h1 className="videotitle text-xl mt-5 text-black-200 "><b>Video title:</b> {title}</h1>
+      <div >
       <img className="thumbnail" src={thumbnailUrl} alt="" />
+      </div>
       <h1>{load === true && link === "" ? "Loading" : ""}</h1>
 
     </div>
+  </div>
   </div>
   
   

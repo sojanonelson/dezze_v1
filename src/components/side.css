@@ -1,0 +1,27 @@
+
+@media only screen and (min-width: 960px) {
+    .sides{
+        width:220px;
+        height: 500px;
+        box-shadow: 1px 1px rgba(0,0,0,0.2);
+        transition: box-shadow ease-in-out 0.1s;
+        transform:translateZ(0);
+        box-sizing: border-box;
+        font-size: 13px;
+        margin-top: 50px;
+        border-radius: 20px;
+        text-align: center;
+        background-color: green;
+        color: white;
+    }
+  }
+
+#right{
+    float: right;
+    
+}
+
+#left{
+    float: left;
+    
+}

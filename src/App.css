@@ -18,7 +18,7 @@
 @media only screen and (max-width: 500px) {
   .main input{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 30%;
+    margin-top: 20%;
     font-size:20px;
     margin-left: 10px;
     width:350px;
@@ -31,7 +31,7 @@
 @media only screen and (min-width: 590px) {
   .main input{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 30%;
+    margin-top: 20%;
     font-size:20px;
     margin-left: 10px;
     width:500px;
@@ -44,7 +44,7 @@
 @media only screen and (max-width:260px) {
   .main input{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 30%;
+    margin-top: 20%;
     font-size:20px;
     margin-left:2px;
     width:250px;
@@ -57,7 +57,7 @@
 @media only screen and (width: 1366px) {
   .main input{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 30%;
+    margin-top: 20%;
     margin-left: 10px;
     width:700px;
     height:60px;
@@ -68,24 +68,37 @@
 
 input{
   border: 3px solid rgb(90, 90, 90);
-  background-color: rgb(114, 114, 114);
+  background-color: rgb(238, 237, 237);
   
   
 }
 
 input:focus {
   background-color: white;
-  box-shadow:inset 0 0 8px 2px #3e3e3e;
   
 }
 
 input::placeholder {
   font-weight: bold;
   opacity: 0.6;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .thumbnail{
 height: 200px;
 width: auto;
+border-radius: 10px;
+}
+
+.videotitle{
+  font-family: sans-serif;
+}
+
+
+#fire{
+  background-color: black;
+}
+
+#fire:hover{
+  background-color: blueviolet;
 }
