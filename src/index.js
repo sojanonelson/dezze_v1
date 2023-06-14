@@ -9,15 +9,15 @@ import RightSlidebar from "./components/Right";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Navbar />
-<div className="left"><LeftSlidebar /></div>
-      
-<div className="right"><RightSlidebar /></div>
-      <App />
-      
-      
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <Navbar />
+    <div className="left">
+      <LeftSlidebar />
+    </div>
+
+    <div className="right">
+      <RightSlidebar />
+    </div>
+    <App />
+  </BrowserRouter>
 );
