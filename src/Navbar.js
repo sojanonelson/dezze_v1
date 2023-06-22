@@ -10,11 +10,11 @@ function Navbar() {
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="www.dezze.com">
-                            <h2 className="text-2xl font-bold">LOGO</h2>
+                            <h2 className="text-2xl font-bold">Dezze YT</h2>
                         </a>
                         <div className="md:hidden">
                             <button
-                                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                                className="p-2 text-gray-700 bg-slate-500 rounded-md outline-none focus:border-gray-400 focus:border"
                                 onClick={() => setNavbar(!navbar)}
                             >
                                 {navbar ? (

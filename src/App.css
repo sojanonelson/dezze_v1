@@ -26,6 +26,11 @@
     border-radius: 25px;
 
   }
+
+  .headlogo{
+    height: 159px;
+    width:auto ;
+  }
 }
 
 @media only screen and (min-width: 590px) {
@@ -38,6 +43,11 @@
     height:60px;
     border-radius: 25px;
 
+  }
+
+  .headlogo{
+    height: 200px;
+    width:auto ;
   }
 }
 
@@ -52,6 +62,11 @@
     border-radius: 25px;
 
   }
+
+  .headlogo{
+    height: 160px;
+    width:auto ;
+  }
 }
 
 @media only screen and (width: 1366px) {
@@ -63,6 +78,11 @@
     height:60px;
     border-radius: 25px;
 
+  }
+
+  .headlogo{
+    height: 160px;
+    width:auto ;
   }
 }
 
@@ -103,7 +123,9 @@ border-radius: 10px;
   background-color: blueviolet;
 }
 
-/* .navbar{
-  background-color: #4F1688;
-} */
-
+.art{
+  background-color: red;
+  padding-left: 10px;
+  width: auto;
+  height: 50px;
+}
