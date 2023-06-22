@@ -128,7 +128,8 @@ const App = () => {
         <div className="flex flex-col items-center">
           <div className="logon column">
             <figure>
-              <img className="headlogo" src={logo} alt="" />
+              {/* <img className="headlogo" src={logo} alt="" /> */}
+              <h1 className="test">Hey Vaish.. how are you</h1>
             </figure>
           </div>
 
