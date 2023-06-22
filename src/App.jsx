@@ -19,15 +19,17 @@ const App = () => {
   const [videoid, setVideoid] = useState("");
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
-  const [load, setLoad] = useState(false);
   const [thumbnailUrl, setThumnailurl] = useState("");
   const [isstatetrue, setIsStateTrue] = useState(false);
   const [coverArt, setCoverArt] = useState("");
-  const [state,setState] = useState("");
-  const [image,setImage] = useState(false);
+  const [state, setState] = useState("");
+  const [image, setImage] = useState(false);
+  // Api
+  const youtubekey = process.env.REACT_APP_BASEURL_YT;
+  const youtubehost = process.env.REACT_APP_BASEURL_YTHOST;
+  const spotifykey = process.env.REACT_APP_BASEURL_SP;
+  const spotifyhost = process.env.REACT_APP_BASEURL_SPHOST;
 
-  const Rapidkey = "a597310939msh2d19f03988866e2p17b2eejsn5e135d6c5603";
-  const Rapidhost = "youtube-mp36.p.rapidapi.com";
   const handleChange = (e) => {
     setVideoid(e.target.value);
   };
@@ -38,15 +40,9 @@ const App = () => {
 
   const buttonClick = async (event) => {
     if (videoid.match("youtu.be")) {
-      console.log("youtube");
-      
-        youTube();
-      
+      youTube();
     } else if (videoid.match("open.spotify.com")) {
-      console.log("spotify");
-      
-        spotify();
-      
+      spotify();
     } else {
       console.log("Enter a valid link...");
     }
@@ -56,11 +52,10 @@ const App = () => {
 
   const youTube = async (event) => {
     const { id } = getVideoId(`${videoid}`);
-    console.log(id);
-    setState("Youtube song");
+
+    setState(true);
     setImage(true);
-    //https://youtu.be/U3ASj1L6_sY
-    // https://open.spotify.com/track/5gLcAfMfOWBmDnHRIEn3xh
+
     setThumnailurl(`https://img.youtube.com/vi/${id}/maxresdefault.jpg`);
     const option = {
       method: "GET",
@@ -68,18 +63,17 @@ const App = () => {
 
       params: { id: `${id}` },
       headers: {
-        "X-RapidAPI-Key": `${Rapidkey}`,
-        "X-RapidAPI-Host": `${Rapidhost}`,
+        "X-RapidAPI-Key": `${youtubekey}`,
+        "X-RapidAPI-Host": `${youtubehost}`,
       },
     };
 
     setIsStateTrue(true);
     try {
-      setLoad(true);
       const response = await axios.request(option);
       setTitle(response.data.title);
       setLink(response.data.link);
-      console.log(response);
+      setVideoid("");
     } catch (error) {
       console.error(error);
     }
@@ -89,20 +83,20 @@ const App = () => {
 
   const spotify = async (event) => {
     const trackId = extractTrackId(videoid);
-    setState("click Download to start downloading...");
     setImage(false);
     const options = {
       method: "GET",
       url: `https://spotify-downloader1.p.rapidapi.com/download/${trackId}`,
       headers: {
-        "X-RapidAPI-Key": "a597310939msh2d19f03988866e2p17b2eejsn5e135d6c5603",
-        "X-RapidAPI-Host": "spotify-downloader1.p.rapidapi.com",
+        "X-RapidAPI-Key": `${spotifykey}`,
+        "X-RapidAPI-Host": `${spotifyhost}`,
       },
     };
 
     try {
       const response = await axios.request(options);
       setLink(response.data.link);
+      setVideoid("");
     } catch (error) {
       console.error(error);
     }
@@ -155,22 +149,22 @@ const App = () => {
                 style={buttonStyles}
                 onClick={buttonClick}
               >
-                {link ? "Download" : "Submit"}
+                {link === "" ? "Submit" : "Download"}
               </button>
             </a>
           </div>
 
           <h1 className="videotitle text-xl mt-2 text-black-200 ">
-            <b>Video title:</b> {title}
-            
+            <b>{state === true ? "Video title:" : ""}</b> {title}
           </h1>
-          <h1>{state}</h1>
 
           <div>
-            <img className="thumbnail" src={image === true ? thumbnailUrl : coverArt} alt="" />
-
+            <img
+              className="thumbnail"
+              src={image === true ? thumbnailUrl : coverArt}
+              alt=""
+            />
           </div>
-          <h1>{load === true && link === "" ? "Loading" : ""}</h1>
         </div>
       </div>
     </div>
