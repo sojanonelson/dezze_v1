@@ -132,7 +132,7 @@ const App = () => {
               
             </figure>
           </div>
-          <h1 className="test">Hey Vaish.. how are you</h1>
+
           <div className="input ">
             <input
               required="number"
