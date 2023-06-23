@@ -9,6 +9,7 @@ import RightSlidebar from "./components/Right";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <div className="rootin bg-red-600">
   <BrowserRouter>
     <Navbar />
     <div className="left">
@@ -20,4 +21,5 @@ root.render(
     </div>
     <App />
   </BrowserRouter>
+  </div>
 );

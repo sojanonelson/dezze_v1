@@ -11,7 +11,8 @@
         margin-top: 50px;
         border-radius: 20px;
         text-align: center;
-        background-color: #4F1688;
+        opacity: 0.5;
+        background-color: black;
         color: white;
     }
   }

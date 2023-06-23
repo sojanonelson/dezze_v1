@@ -25,3 +25,27 @@ body {
   justify-content: space-between;
  
 }
+
+
+
+@media only screen and (min-width: 700px) {
+  .rootin{
+    margin: 0px;
+    height: 100vh;
+    background: url(./image/deskbgin.jpg) no-repeat center center fixed ;
+    background-size: cover;
+    
+  }
+
+}
+@media only screen and (max-width: 700px) {
+  .rootin{
+    margin: 0px;
+    height: 100vh;
+    background: url(./image/mobbgin.jpg) no-repeat center center fixed ;
+    background-size: cover;
+    
+    
+  }
+
+}

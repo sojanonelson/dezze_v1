@@ -123,8 +123,8 @@ const App = () => {
   };
 
   return (
-    <div>
-      <div className="main  ">
+    <div className="head">
+      <div className="main">
         <div className="flex flex-col items-center">
           <div className="logon column">
             <figure>

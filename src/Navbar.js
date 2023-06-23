@@ -1,20 +1,22 @@
 import React from 'react'
 import { useState } from 'react';
+import './App.css'
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
-       <nav className="w-full bg-white shadow">
+       <nav className=" w-full backdrop-blur-lg shadow bg-black/30 ">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="www.dezze.com">
-                            <h2 className="text-2xl font-bold">Dezze YT</h2>
+                            <h2 className="text-2xl text-gray-100 font-bold">web name didn't decided</h2>
                         </a>
                         <div className="md:hidden">
+
                             <button
-                                className="p-2 text-gray-700 bg-slate-500 rounded-md outline-none focus:border-gray-400 focus:border"
+                                className="p-2 .text-white bg-slate-700 rounded-md outline-none focus:border-red-400 focus:border"
                                 onClick={() => setNavbar(!navbar)}
                             >
                                 {navbar ? (
@@ -52,21 +54,21 @@ function Navbar() {
                 </div>
                 <div>
                     <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+                        className={`flex-1 justify-self-center pb-2 mt-10 md:block md:pb-0 md:mt-0 ${
                             navbar ? "block" : "hidden"
                         }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-gray-600 hover:text-blue-600">
+                            <li className="text-gray-100 hover:text-blue-600">
                                 <a href="www.dezze.com/dezze">Home</a>
                             </li>
-                            <li className="text-gray-600 hover:text-blue-600">
+                            <li className="text-gray-100 hover:text-blue-600">
                                 <a href="www.dezze.com/blog">Blog</a>
                             </li>
-                            <li className="text-gray-600 hover:text-blue-600">
+                            <li className="text-gray-100 hover:text-blue-600">
                                 <a href="www.dezze.com/about">About US</a>
                             </li>
-                            <li className="text-gray-600 hover:text-blue-600">
+                            <li className="text-gray-100 hover:text-blue-600">
                                 <a href="www.dezze.com/contact">Contact US</a>
                             </li>
                         </ul>
