@@ -11,7 +11,7 @@ function Navbar() {
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="www.dezze.com">
-                            <h2 className="text-2xl text-gray-100 font-bold">web name didn't decided</h2>
+                            <h2 className="text-2xl text-gray-100 font-bold">swapper audio</h2>
                         </a>
                         <div className="md:hidden">
 
