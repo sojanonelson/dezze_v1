@@ -2,6 +2,7 @@ import React from 'react'
 import { useState} from 'react';
 import './App.css';
 import {  useNavigate  } from 'react-router-dom'
+import "./App.css"
 
 
 function Navbar() {
@@ -34,11 +35,11 @@ function Navbar() {
 
   return (
     <div>
-       <nav className=" w-full backdrop-blur-lg shadow bg-black/30 ">
+       <nav className="main-nav w-full backdrop-blur-lg shadow bg-black/30 ">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="www.dezze.com">
+                        <a onClick={Home} href='/'>
                             <h2 className="text-2xl text-gray-100 font-bold">Dezze</h2>
                         </a>
                         <div className="md:hidden">

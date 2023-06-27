@@ -3,6 +3,7 @@ import axios from "axios";
 import getVideoId from "get-video-id";
 import "../../App.css";
 import "../../index.css"
+import "./load.scss";
 // import logo from "../../image/HeadLogo.png";
 import LeftSlide from "../../components/Left"
 import RightSlide from "../../components/Right"
@@ -26,6 +27,7 @@ const Home = () => {
   const [coverArt, setCoverArt] = useState("");
   const [state, setState] = useState("");
   const [image, setImage] = useState(false);
+  const [load,setLoad] = useState(false);
   // Api
   const youtubekey = process.env.REACT_APP_BASEURL_YT;
   const youtubehost = process.env.REACT_APP_BASEURL_YTHOST;
@@ -57,7 +59,7 @@ const Home = () => {
 
     setState(true);
     setImage(true);
-
+    setLoad(true);
     setThumnailurl(`https://img.youtube.com/vi/${id}/maxresdefault.jpg`);
     const option = {
       method: "GET",
@@ -76,6 +78,8 @@ const Home = () => {
       setTitle(response.data.title);
       setLink(response.data.link);
       setVideoid("");
+      setLoad(false);
+      
     } catch (error) {
       console.error(error);
     }
@@ -86,6 +90,7 @@ const Home = () => {
   const spotify = async (event) => {
     const trackId = extractTrackId(videoid);
     setImage(false);
+    setLoad(true);
     const options = {
       method: "GET",
       url: `https://spotify-downloader1.p.rapidapi.com/download/${trackId}`,
@@ -99,6 +104,7 @@ const Home = () => {
       const response = await axios.request(options);
       setLink(response.data.link);
       setVideoid("");
+      setLoad(false);
     } catch (error) {
       console.error(error);
     }
@@ -170,7 +176,11 @@ const Home = () => {
           <h1 className="videotitle text-xl  mt-2 text-white ">
             <b>{state === true ? "Video title:" : ""}</b> {title}
           </h1>
-
+          <div>{ load ? <svg class="spinner" width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+          <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+       </svg>
+          : ""}
+          </div>
           <div>
             <img
               className="thumbnail"
@@ -178,6 +188,11 @@ const Home = () => {
               alt=""
             />
           </div>
+          
+
+
+
+
         </div>
       </div>
     </div>

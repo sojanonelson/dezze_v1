@@ -19,27 +19,7 @@
     background-color: rgb(48, 48, 248);
 }
 
-.card{
-    width:400px;
-    height:auto;
-    
 
 
-}
 
-.down{
-    gap: 10px;
-    display: flex;
-    padding-left: 10px;
-    padding-right: 10px;
-    top: 400px;
-    
-}
 
-.thecard{
-    background-image: url("https://ibb.co/GnHYKYd");
-    height: 100vh;
-    margin-top: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
