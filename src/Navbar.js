@@ -1,9 +1,37 @@
 import React from 'react'
-import { useState } from 'react';
-import './App.css'
+import { useState} from 'react';
+import './App.css';
+import {  useNavigate  } from 'react-router-dom'
+
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
+
+  const navigate =useNavigate()
+
+  const About =(e)=>{
+    e.preventDefault()
+    navigate("/About");
+
+  }
+  const Home =(e)=>{
+    e.preventDefault()
+    navigate("/");
+
+  }
+  const Download =(e)=>{
+    e.preventDefault()
+    navigate("/Download");
+
+  }
+  const Contact =(e)=>{
+    e.preventDefault()
+    navigate("/contact");
+    
+
+  }
+
+
   return (
     <div>
        <nav className=" w-full backdrop-blur-lg shadow bg-black/30 ">
@@ -11,7 +39,7 @@ function Navbar() {
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="www.dezze.com">
-                            <h2 className="text-2xl text-gray-100 font-bold">swapper audio</h2>
+                            <h2 className="text-2xl text-gray-100 font-bold">Dezze</h2>
                         </a>
                         <div className="md:hidden">
 
@@ -60,16 +88,16 @@ function Navbar() {
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li className="text-gray-100 hover:text-blue-600">
-                                <a href="www.dezze.com/dezze">Home</a>
+                                <a onClick={Home} href='/'>Home</a>
                             </li>
                             <li className="text-gray-100 hover:text-blue-600">
-                                <a href="www.dezze.com/blog">Blog</a>
+                                <a onClick={Download} href='/Download'>Download</a>
                             </li>
                             <li className="text-gray-100 hover:text-blue-600">
-                                <a href="www.dezze.com/about">About US</a>
+                                <a onClick={About} href='/About'>About US</a>
                             </li>
                             <li className="text-gray-100 hover:text-blue-600">
-                                <a href="www.dezze.com/contact">Contact US</a>
+                                <a onClick={Contact} href="/Contact">Contact US</a>
                             </li>
                         </ul>
                     </div>
