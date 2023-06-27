@@ -167,7 +167,7 @@ const Home = () => {
             </a>
           </div>
 
-          <h1 className="videotitle text-xl mt-2 text-white ">
+          <h1 className="videotitle text-xl  mt-2 text-white ">
             <b>{state === true ? "Video title:" : ""}</b> {title}
           </h1>
 
