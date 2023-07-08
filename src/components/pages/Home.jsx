@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import getVideoId from "get-video-id";
 import "../../App.css";
-import "../../index.css"
+import "../../index.css";
 import "./load.scss";
 // import logo from "../../image/HeadLogo.png";
-import LeftSlide from "../../components/Left"
-import RightSlide from "../../components/Right"
+import LeftSlide from "../../components/Left";
+import RightSlide from "../../components/Right";
 function extractTrackId(url) {
   const regex = /track\/([a-zA-Z0-9]+)/;
   const match = url.match(regex);
@@ -27,7 +27,7 @@ const Home = () => {
   const [coverArt, setCoverArt] = useState("");
   const [state, setState] = useState("");
   const [image, setImage] = useState(false);
-  const [load,setLoad] = useState(false);
+  const [load, setLoad] = useState(false);
   // Api
   const youtubekey = process.env.REACT_APP_BASEURL_YT;
   const youtubehost = process.env.REACT_APP_BASEURL_YTHOST;
@@ -79,7 +79,6 @@ const Home = () => {
       setLink(response.data.link);
       setVideoid("");
       setLoad(false);
-      
     } catch (error) {
       console.error(error);
     }
@@ -132,30 +131,27 @@ const Home = () => {
 
   return (
     <div className="head">
-        
-    <div className="left">
-      <LeftSlide />
-    </div>
+      <div className="left">
+        <LeftSlide />
+      </div>
 
-    <div className="right">
-      <RightSlide />
-    </div>
+      <div className="right">
+        <RightSlide />
+      </div>
       <div className="main">
         <div className="flex flex-col items-center">
           <div className="logon column">
-           
-             <b><h1 className="dezze">Dezze</h1></b> 
-             {/* logo here */}
-              
-            
+            <b>
+              <h1 className="dezze">Dezze</h1>
+            </b>
+            {/* logo here */}
           </div>
-
 
           <div className="input ">
             <input
               required="number"
               type="url"
-              className="px-4 py-2 w-full  rounded-md transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/30 rounded-xl"
+              className="px-4 py-2 w-full transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/30 rounded-xl"
               onChange={handleChange}
               value={videoid}
               placeholder="Paste the video link here"
@@ -176,10 +172,28 @@ const Home = () => {
           <h1 className="videotitle text-xl  mt-2 text-white ">
             <b>{state === true ? "Video title:" : ""}</b> {title}
           </h1>
-          <div>{ load ? <svg class="spinner" width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-          <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-       </svg>
-          : ""}
+          <div>
+            {load ? (
+              <svg
+                class="spinner"
+                width="40px"
+                height="40px"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  class="path"
+                  fill="none"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  cx="33"
+                  cy="33"
+                  r="30"
+                ></circle>
+              </svg>
+            ) : (
+              ""
+            )}
           </div>
           <div>
             <img
@@ -188,11 +202,6 @@ const Home = () => {
               alt=""
             />
           </div>
-          
-
-
-
-
         </div>
       </div>
     </div>

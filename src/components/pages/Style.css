@@ -1,14 +1,25 @@
 .style{
-    background-color: rgb(255, 255, 255);
+   
     margin: 0px;
-    height: 100vh;
-    font-size: 2rem;
-    font-weight: 3rem;
-    padding: 10px;
     
 
 }
 
+.contact_head{
+    font-size: 2rem;
+    font-weight: 3rem;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    height: auto;
+    width: 500px;
+    
+    border-radius: 10px;
+    
+
+    
+
+}
 .con{
     font-size: larger;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -19,7 +30,39 @@
     background-color: rgb(48, 48, 248);
 }
 
+@media only screen and (min-width: 700px) {
+    .style{
+      margin: 0px;
+      height: 100vh;
+      background: url("../../image/deskbg.jpg") no-repeat center center fixed ;
+      background-size: cover;
+      
+      
+    };
+    .contact_head{
+        margin-top: 75px;
+    }
+    
+  
+  }
+  @media only screen and (max-width: 700px) {
+    .style{
+      margin: 0px;
+      height: 100vh;
+      background: url("../../image/mobbg.jpg") no-repeat center center fixed ;
+      background-size: cover;
+      
+      
+    }
+    .contact_head{
+        margin-top: -159px;
+        width: 290px;
+        height: auto;
+        font-size: 1rem;
 
+    }
+  
+  }
 
 
 
